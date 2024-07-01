@@ -1,0 +1,43 @@
+
+tensorflow==2.16.1
+flwr==1.8.0
+numpy==1.26.4
+pandas==2.2.1
+scikit-learn==1.4.2
+pykalman==0.9.7
+
+
+
+
+
+
+
+# Install Google Cloud SDK and initialize
+gcloud init
+
+# Generate SSH keys (if needed)
+ssh-keygen -t rsa -b 2048 -C "your_email@example.com"
+
+# List your VM instances
+gcloud compute instances list
+
+# Connect to your VM instance
+gcloud compute ssh [YOUR_VM_NAME] --zone [YOUR_VM_ZONE]
+
+# Navigate to your project directory (on your local machine)
+cd path/to/your/project
+
+# Upload your code to the VM
+gcloud compute scp --recurse * node1instance-20240614-035151:~/ --zone us-central1-b
+client.py                                                                          100% 5158    16.4KB/s   00:00    
+config.py                                                                          100%   96     0.3KB/s   00:00    
+model.py                                                                           100% 1620     5.2KB/s   00:00    
+requirements.txt                                                                   100%  110     0.4KB/s   00:00    
+(base) aditya@aditya-HP-Laptop-14s-fq1xxx:~/Documents/GRU/zzzzz/client$ gcloud compute scp --recurse * node1instance-20240614-035151:~/ubuntu --zone us-central1-b
+
+
+sudo chmod 755 /home/aditya
+chmod -R 700 /home/aditya
+chmod -R 777 /home/aditya // grant all permissions
+
+
